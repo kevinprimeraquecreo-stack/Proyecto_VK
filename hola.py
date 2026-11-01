@@ -1,5 +1,5 @@
 #Proyecto VK
-estoque = {}
+stock = {}
 
 #Mostrar menu de opciones
 def mostrar_menu():
@@ -12,7 +12,7 @@ def mostrar_menu():
 
 #Agregar productos XDD
 def Agregar_producto(stock):
-    Nombre = input("Ponga el nombre del producto").strip().lower()
+    Nombre = input("Ponga el nombre del producto: ").strip().lower()
 
     #Verificar si el producto existe en el inventario
     if Nombre == "":
@@ -118,13 +118,13 @@ while True:
     opción = input("Seleccione una opción: ")
 
     if opción == "1":
-        Agregar_producto(estoque)
+        Agregar_producto(stock)
     elif opción == "2":
-        Actualizar_producto(estoque)
+        Actualizar_producto(stock)
     elif opción == "3":
-        Eliminar_producto(estoque)
+        Eliminar_producto(stock)
     elif opción == "4":
-        Mostrar_inventario(estoque)
+        Mostrar_inventario(stock)
     elif opción == "0":
         print("Saliendo del programa. ")
         break
