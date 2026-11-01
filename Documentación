@@ -1,0 +1,50 @@
+# Proyecto VK: Sistema de Gestión de Inventario en Consola
+
+## 📋 Descripción del Proyecto
+**Proyecto VK** es una aplicación desarrollada en Python diseñada para gestionar el inventario de un negocio de forma local y sencilla mediante la interfaz de línea de comandos (CLI). Permite registrar, actualizar, eliminar y consultar productos almacenados en memoria mediante una estructura de datos eficiente.
+
+---
+
+## 🚀 Características Principales
+* **Gestión completa (CRUD):** Permite crear, leer, actualizar y eliminar productos.
+* **Prevención de duplicados:** Si se intenta registrar un producto existente, el sistema actualiza automáticamente su cantidad sumándola a la actual.
+* **Manejo de errores:** Validación de entradas numéricas (`try-except`) para evitar que el programa falle por datos incorrectos.
+* **Búsqueda rápida:** Capacidad de consultar el inventario completo o buscar un producto específico por su nombre.
+
+---
+
+## 🛠️ Requisitos Técnicos
+* **Lenguaje:** Python 3.x
+* **Librerías externas:** Ninguna (utiliza exclusivamente bibliotecas nativas de Python).
+
+---
+
+## 🕹️ Instrucciones de Uso
+1. Ejecuta el archivo principal de Python en tu terminal:
+   ```bash
+   python nombre_del_archivo.py
+   ```
+2. Se desplegará el menú principal con las siguientes opciones:
+   * **[1] Agregar producto:** Solicita el nombre, precio y cantidad.
+   * **[2] Actualizar producto:** Permite modificar el precio o la cantidad de un producto existente.
+   * **[3] Eliminar producto:** Borra un producto del inventario por completo.
+   * **[4] Mostrar todos los productos:** Despliega el inventario completo o permite buscar uno en específico.
+   * **[0] Salir:** Finaliza la ejecución del programa.
+
+---
+
+## 📐 Estructura del Código (Arquitectura)
+El código está dividido en funciones modulares para facilitar su lectura, mantenimiento y explicación:
+* **`stock = {}`**: Diccionario global anidado donde se almacena la información.
+* **`mostrar_menu()`**: Despliega las opciones en pantalla.
+* **`Agregar_producto(stock)`**: Controla el alta de nuevos ítems y la suma de stock existente.
+* **`Actualizar_producto(stock)`**: Modifica atributos específicos de los productos.
+* **`Eliminar_producto(stock)`**: Remueve claves del diccionario.
+* **`Mostrar_inventario(stock)`**: Gestiona la visualización de datos y búsquedas.
+* **Bucle `while True`**: Mantiene el flujo de ejecución activo hasta que el usuario decida salir.
+
+---
+
+## 🔮 Futuras Mejoras
+* Implementación de persistencia de datos mediante archivos **JSON** o bases de datos SQLite para que el inventario no se pierda al cerrar el programa.
+* Validación estricta para evitar precios o cantidades negativas.
