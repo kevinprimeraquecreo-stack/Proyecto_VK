@@ -1,50 +1,75 @@
-# Proyecto VK: Sistema de Gestión de Inventario en Consola
+Proyecto VK: Sistema de Gestión de Inventario en Python
 
-## 📋 Descripción del Proyecto
-**Proyecto VK** es una aplicación desarrollada en Python diseñada para gestionar el inventario de un negocio de forma local y sencilla mediante la interfaz de línea de comandos (CLI). Permite registrar, actualizar, eliminar y consultar productos almacenados en memoria mediante una estructura de datos eficiente.
+Descripción del proyecto:
 
----
+El "Proyecto VK" consiste en desarrollar un programa en Python que permita llevar un control básico del inventario de un negocio. Su funcionamiento se realiza desde la consola, donde el usuario puede agregar productos, modificar su información, eliminarlos y consultar los productos registrados.
 
-## 🚀 Características Principales
-* **Gestión completa (CRUD):** Permite crear, leer, actualizar y eliminar productos.
-* **Prevención de duplicados:** Si se intenta registrar un producto existente, el sistema actualiza automáticamente su cantidad sumándola a la actual.
-* **Manejo de errores:** Validación de entradas numéricas (`try-except`) para evitar que el programa falle por datos incorrectos.
-* **Búsqueda rápida:** Capacidad de consultar el inventario completo o buscar un producto específico por su nombre.
+La información se almacena temporalmente en un diccionario de Python, lo que permite organizar los datos y acceder a ellos fácilmente mientras el programa está en ejecución.
 
----
+El objetivo principal es crear una herramienta sencilla y práctica que facilite la administración de los productos de un negocio.
 
-## 🛠️ Requisitos Técnicos
-* **Lenguaje:** Python 3.x
-* **Librerías externas:** Ninguna (utiliza exclusivamente bibliotecas nativas de Python).
+Características principales:
 
----
-
-## 🕹️ Instrucciones de Uso
-1. Ejecuta el archivo principal de Python en tu terminal:
-   ```bash
-   python nombre_del_archivo.py
-   ```
-2. Se desplegará el menú principal con las siguientes opciones:
-   * **[1] Agregar producto:** Solicita el nombre, precio y cantidad.
-   * **[2] Actualizar producto:** Permite modificar el precio o la cantidad de un producto existente.
-   * **[3] Eliminar producto:** Borra un producto del inventario por completo.
-   * **[4] Mostrar todos los productos:** Despliega el inventario completo o permite buscar uno en específico.
-   * **[0] Salir:** Finaliza la ejecución del programa.
+- Agregar productos: Permite registrar nuevos productos indicando su nombre, precio y cantidad disponible.
+- Evitar productos duplicados: Si se intenta agregar un producto que ya existe, el programa suma la nueva cantidad al stock actual en lugar de crear otro registro.
+- Actualizar información: Permite modificar el precio o la cantidad de un producto que ya está registrado.
+- Eliminar productos: Da la opción de quitar un producto del inventario.
+- Consultar inventario: Muestra todos los productos registrados y permite buscar uno por su nombre.
+- Control de errores: Utiliza `try-except` para manejar entradas incorrectas, especialmente cuando se esperan valores numéricos.
 
 ---
 
-## 📐 Estructura del Código (Arquitectura)
-El código está dividido en funciones modulares para facilitar su lectura, mantenimiento y explicación:
-* **`stock = {}`**: Diccionario global anidado donde se almacena la información.
-* **`mostrar_menu()`**: Despliega las opciones en pantalla.
-* **`Agregar_producto(stock)`**: Controla el alta de nuevos ítems y la suma de stock existente.
-* **`Actualizar_producto(stock)`**: Modifica atributos específicos de los productos.
-* **`Eliminar_producto(stock)`**: Remueve claves del diccionario.
-* **`Mostrar_inventario(stock)`**: Gestiona la visualización de datos y búsquedas.
-* **Bucle `while True`**: Mantiene el flujo de ejecución activo hasta que el usuario decida salir.
+Herramientas utilizadas
 
----
+Para desarrollar este proyecto se utilizan las siguientes herramientas:
 
-## 🔮 Futuras Mejoras
-* Implementación de persistencia de datos mediante archivos **JSON** o bases de datos SQLite para que el inventario no se pierda al cerrar el programa.
-* Validación estricta para evitar precios o cantidades negativas.
+- Lenguaje de programación: Python 3.x.
+- Entorno de ejecución: Consola o terminal.
+- Librerías: No necesita instalar librerías externas, ya que utiliza funciones y estructuras que vienen incluidas en Python.
+- Estructura de almacenamiento: Diccionarios, que permiten guardar y organizar la información de cada producto.
+
+¿Cómo funciona el programa?
+
+Al ejecutar el archivo principal, aparece un menú con diferentes opciones para administrar el inventario.
+
+Las opciones disponibles son:
+
+1. Agregar producto: El usuario introduce el nombre, el precio y la cantidad del producto que desea registrar.
+2. Actualizar producto: Permite seleccionar un producto existente y cambiar su precio o cantidad.
+3. Eliminar producto: Busca un producto por su nombre y lo elimina del inventario.
+4. Mostrar inventario: Presenta la lista de productos registrados y permite realizar búsquedas.
+0. Salir: Cierra el programa.
+
+Para iniciar el sistema, solamente hay que ejecutar el archivo desde una terminal:
+
+```bash
+python nombre_del_archivo.py
+```
+Organización del código
+
+Para que el programa sea más fácil de entender y modificar, sus diferentes operaciones están separadas en funciones.
+
+- `stock = {}`: Es el diccionario donde se almacena la información de los productos.
+- `mostrar_menu()`: Se encarga de mostrar las opciones disponibles.
+- `Agregar_producto(stock)`: Registra productos nuevos o suma cantidades cuando el producto ya existe.
+- `Actualizar_producto(stock)`: Permite modificar los datos de un producto.
+- `Eliminar_producto(stock)`: Se encarga de eliminar productos del inventario.
+- `Mostrar_inventario(stock)`: Muestra los productos registrados y permite realizar búsquedas.
+- `while True`: Mantiene el programa funcionando y permite regresar al menú después de cada operación, hasta que el usuario seleccione la opción de salir.
+
+Esta organización permite que cada función tenga una tarea específica, haciendo que el código sea más ordenado y fácil de mantener.
+
+Mejoras que se podrían implementar en el futuro
+
+Aunque el programa cumple con las funciones básicas de un inventario, existen algunas mejoras que podrían agregarse más adelante:
+
+- Guardar los datos: Implementar archivos JSON o una base de datos SQLite para conservar los productos incluso después de cerrar el programa.
+- Mejorar las validaciones: Evitar que se registren precios o cantidades negativas.
+- Agregar nuevas funciones: Incorporar categorías, códigos de productos y reportes de inventario.
+- Mejorar la interfaz: Crear una interfaz gráfica para que el programa sea más cómodo de utilizar.
+
+Objetivo del proyecto
+
+Con este proyecto buscamos poner en práctica los conocimientos de Python, especialmente el uso de funciones, diccionarios, ciclos y condicionales.
+
+Además, queremos comprender cómo funciona un sistema de inventario y aprender a desarrollar programas que puedan resolver necesidades reales de un negocio.
